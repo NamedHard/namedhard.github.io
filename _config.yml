@@ -28,7 +28,7 @@ paginate: 8
 # 你的社交网络链接，它们会作为图标出现在你的网站页脚中，可选填写
 footer-links: 
   email: zhuxian0793@gmail.com 
-  github: https://github.com/NamedHard
+  github: NamedHard
   rss: #随便填点啥RSS就能用了
   # stackoverflow: # http://stackoverflow.com/<>
   # tumblr: # https://<username>.tumblr.com

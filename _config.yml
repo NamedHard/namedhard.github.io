@@ -47,7 +47,7 @@ google_analytics:
 # baseurl: 
 
 # Gitalk settings
-comments: true
+comments: 
   gitalk: true
   gitalk_clientID: 'fa7cdd0c8642eff1bb43'
   gitalk_Secret: '1018d0a03ac13cdc18b483d4252586fb8e1f51a2'

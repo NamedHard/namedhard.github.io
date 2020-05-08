@@ -47,10 +47,14 @@ google_analytics:
 # baseurl: 
 
 # Gitalk settings
-comment_gitalk_clientId: fa7cdd0c8642eff1bb43
-comment_gitalk_clientSecret: 1018d0a03ac13cdc18b483d4252586fb8e1f51a2
-comment_gitalk_repo: namedhard.github.io
-github_username: namedhard
+comments: true
+  gitalk: true
+  gitalk_clientID: 'fa7cdd0c8642eff1bb43'
+  gitalk_Secret: '1018d0a03ac13cdc18b483d4252586fb8e1f51a2'
+  gitalk_repo: 'namedhard.github.io'
+  gitalk_owner: 'namedhard'
+  gitalk_admin: 'namedhard'
+  distractionFreeMode: true
 
 #
 # !! 以下所有设置都不需要更改 !!

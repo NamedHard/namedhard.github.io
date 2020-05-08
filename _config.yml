@@ -46,7 +46,11 @@ google_analytics:
 # 那么就写成 "/repository-name"
 # baseurl: 
 
-disqus: namedhard
+# Gitalk settings
+comment_gitalk_clientId: fa7cdd0c8642eff1bb43
+comment_gitalk_clientSecret: 1018d0a03ac13cdc18b483d4252586fb8e1f51a2
+comment_gitalk_repo: namedhard.github.io
+github_username: namedhard
 
 #
 # !! 以下所有设置都不需要更改 !!

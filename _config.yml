@@ -50,7 +50,7 @@ google_analytics:
 comments: 
   gitalk: true
   gitalk_clientID: 'fa7cdd0c8642eff1bb43'
-  gitalk_Secret: '1018d0a03ac13cdc18b483d4252586fb8e1f51a2'
+  gitalk_Secret: '51510fc6a153e29b47c2221d4998a6f59fd37ddc'
   gitalk_repo: 'namedhard.github.io'
   gitalk_owner: 'namedhard'
   gitalk_admin: 'namedhard'

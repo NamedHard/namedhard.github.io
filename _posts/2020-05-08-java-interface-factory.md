@@ -1,42 +1,48 @@
 ---
 layout: post
-title: LOFFER文档
-date: 2019-06-02
-Author: 来自中世界
+title: 浅谈Java接口和工厂模式的应用
+date: 2020-05-08
+Author: 来自Clarence
 categories: 
 tags: [Java, 工厂模式]
-comments: true
 ---
 
 浅谈Java接口，工厂模式的理解
+
 1.尽管学习和使用Java的时间不短，但是对于接口的理解一直不是很透彻，本次通过实例剖析接口设计的奥妙之处，从而加深理解
-  业务背景：存在一个支付手段控制类PayController，若干支付手段类(AliPay,WeChatPay...)
-        控制类可以根据用户选择的支付方式，调用对应的支付类来进行支付操作。
-    V1版本实现：
-    // 支付控制类
-    public class PayController {
-        public static void main(String[] args) throws Exception {
-            String payMethod = PayController.promptForPay();
-            switch (payMethod){
-            case "AliPay":
-                AliPay aliPay = new AliPay();
-                aliPay.pay();
-                break;
-            case "WeChatPay":
-                WeChatPay weChatPay = new WeChatPay();
-                weChatPay.pay();
-                break;
-            default:
-                throw new Exception();
-            }
-        }
-        // 提示用户选择支付方式
-        public static String promptForPay() {
-            System.out.println("请选择支付方式：");
-            Scanner scanner = new Scanner(System.in);
-            return scanner.nextLine();
+
+  业务背景：存在一个支付手段控制类PayController，若干支付手段类(AliPay,WeChatPay...)，控制类可以根据用户选择的支付方式，调用对应的支付类来进行支付操作。
+
+​    V1版本实现：
+
+```
+// 支付控制类
+public class PayController {
+    public static void main(String[] args) throws Exception {
+        String payMethod = PayController.promptForPay();
+        switch (payMethod){
+        case "AliPay":
+            AliPay aliPay = new AliPay();
+            aliPay.pay();
+            break;
+        case "WeChatPay":
+            WeChatPay weChatPay = new WeChatPay();
+            weChatPay.pay();
+            break;
+        default:
+            throw new Exception();
         }
     }
+    // 提示用户选择支付方式
+    public static String promptForPay() {
+        System.out.println("请选择支付方式：");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+}
+```
+
+
 
     // AliPay
     public class AliPay {
@@ -53,8 +59,10 @@ comments: true
     }
 
 从以上V1版本可以看到基本功能虽然已经实现，但是代码仍有很大改进空间；
+
 1.对于具有相同性质行为[比如说pay()方法]的类对象来说，每次实例化都要调用一次当前对象的方法，略显罗嗦
-比如说，假设项目扩张，用户支付手段更加多样化的时候，每增加一种支付手段类，就要新添加一行调用pay()方法的代码.
+比如说，假设项目扩张，用户支付手段更加多样化的时候，每增加一种支付手段类，就要新添加一行调用pay()方法的代码。
+
 如果在实例化支付手段类之后，只需要一行调用pay()方法的代码，能否实现呢？答案是可以的，这时候引入接口的作用就体现出来了。
 
 V2版本实现：引入接口

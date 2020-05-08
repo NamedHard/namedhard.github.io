@@ -46,6 +46,7 @@ google_analytics:
 # 那么就写成 "/repository-name"
 # baseurl: 
 
+disqus: namedhard
 
 #
 # !! 以下所有设置都不需要更改 !!
